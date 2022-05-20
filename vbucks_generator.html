@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<!-- This is based on DillingerLee's great template here:
+https://github.com/Team-Code/KA_Offline -->
+<html lang = "en"> 
+ <head>
+    <title>difficulty jump</title> 
+</head>
+ <body>
+    <p align="center"> 
+	<!--This draws the Canvas on the webpage -->
+      <canvas id="mycanvas"></canvas> 
+    </p>
+ </body>
+ <!-- Run all the JavaScript stuff -->
+ <!-- Include the processing.js library -->
+ <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script> 
+ 
+ <script>
+    var sketchProc = function(processingInstance) {
+     with (processingInstance) {
+        size(400, 400); 
+        frameRate(60);
+        setTimeout(() => {currentScene = 1; drawMenu();}, 4000)
+        //create pillar function
+        var drawPillar = function(gap, a) {
+fill(87, 87, 87);
+noStroke();
+rect(Opos + a, gap - 30, 50, -400);
+rect(Opos + a, gap + 30, 50, 400);
+stroke(0, 0, 0);
+strokeWeight(2);
+line(Opos + a, gap + 30, Opos + a + 50, 400);
+line(Opos + a + 50, gap + 30, Opos + a, 400);
+line(Opos + a, gap - 30, Opos + a + 50, 0);
+line(Opos + a + 50, gap - 30, Opos + a, 0);
+if(Opos < 0 - a + 50  && Opos >  0 - a && characterY > gap + 30) {drawGameOver();}
+if(Opos < 0 - a + 50  && Opos >  0 - a && characterY < gap - 30) {drawGameOver();}
+};
+        // ProgramCodeGoesHere
+        //create good apperance
+        noStroke();
+        textSize(20);
+        //create nice variables
+        var mode = "normal";
+        var amongus = createFont("fantasy");
+        var lava = 0;
+        var lines = 1;
+var counterlava = 30;
+var sussybaka = createFont("cursive");
+var TYpos = 126;
+var TYpos2 = 170;
+var a = 0;
+var b = -4500;
+var TXpos = 126;
+        var Opos = 0;
+        var v = 0;
+        var color1 = [255, 0, 0];
+        var color2 = [24, 179, 0];
+        var characterY = 390;
+        var characterX = 25;
+        var currentScene = 0;
+        //create jumping
+        var yValues = 1;
+        var i = 0;
+        var jump = function() {
+          v = 1;
+          i = 0;
+setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => {i++; characterY-=yValues;setTimeout(() => { i++; characterY-=yValues;}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);
+}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);
+}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);}, i);
+setTimeout(() => {v = 0;}, 150);
+        
+        };
+        //create scenes
+        var startLevel = function() {
+        lines = 1;
+        mode = "normal";
+        noStroke();
+        fill(color2[0], color2[1], color2[2]);
+        ellipse(characterX, characterY - 15, 20, 20);
+        fill(color1[0], color1[1], color1[2]);
+        ellipse(characterX, characterY, 50, 20);
+        //create obstical movement
+        Opos-=10;
+        //create pillars
+        };
+        var drawGameOver = function() {
+        currentScene = 3;
+        background(255, 0, 0);
+        };
+        var drawEndL1 = function() {
+        noStroke();
+        currentScene = 4;
+        background(0, 0, 255);
+          fill(0, 255, 255);
+          rect(50, 200, 300, 50);
+          fill(0, 0, 0);
+          text("Play", 175, 230);
+        };
+        var drawMenu = function() {
+          background(0, 0, 255);
+          fill(0, 255, 255);
+          rect(50, 200, 300, 50);
+          fill(0, 0, 0);
+          text("Play (test)", 150, 230);
+          
+        };
+        var drawEndL2 = function() {
+        noStroke();
+        currentScene = 6;
+        background(0, 0, 255);
+          fill(0, 255, 255);
+          rect(50, 200, 300, 50);
+          fill(0, 0, 0);
+          text("Play", 175, 230);
+        };
+        
+        //add mouse interaction
+        mouseClicked = function() {
+          if(currentScene === 1) {
+          if(mouseX > 50 && mouseX < 350 && mouseY > 200 && mouseY < 250) {
+            currentScene = 2;
+            frameRate(42.5);
+          }
+          }
+          if(currentScene === 4) {
+          if(mouseX > 50 && mouseX < 350 && mouseY > 200 && mouseY < 250) {
+         currentScene = 5;
+            Opos = 0;
+            characterY = 390;
+          }
+         }
+         if(currentScene === 6) {
+         if(mouseX > 50 && mouseX < 350 && mouseY > 200 && mouseY < 250) {
+         currentScene = 7;
+            Opos = 0;
+            characterY = 390;
+          }
+         }
+        };
+        keyReleased = function() {
+        if(keyCode === 32 && mode === "normal") {
+          var jump2 = new jump;
+          }
+          if(keyCode === 32 && mode === "lines") {
+          lines++;
+          }
+          if(keyCode === 50) {
+          drawEndL1();
+          }
+          if(keyCode === 51) {
+          drawEndL2();
+          }
+        };
+        draw = function() {
+        //intro
+        if(currentScene === 0) {
+        if(a >= 1 && TYpos2 > 140) {
+        TYpos2-=2;
+    }
+    if (a >= 1.5 && TXpos < 350) {
+        TXpos += 4;
+    }
+    b+=25;
+    a+= 0.01;
+    background(0, 0, 0);
+    fill(255, 255, 255);
+textSize(70);
+text("LR", 84, TYpos);
+textFont(sussybaka, 30);
+text("dev", 183, TYpos);
+textFont(amongus, 30);
+text("If you know", 134, 200);
+text("You know", 144, 235);
+fill(0, 0, 0);
+    rect(134, TYpos2, 152, 40);
+    rect(TXpos, 207, 140, 40);
+    ellipse(200, 200, b, b);
+    }
+          //create character DEATH
+          if(v === 0) {
+          characterY += 5;
+          }
+          //create character on-screen
+          if(characterY > 390) {
+            characterY = 390;
+          }
+          if(characterY < 25) {
+            characterY = 25;
+          }
+          if(lines > 3) {
+          lines = 1;
+          }
+          //level 1
+          if(currentScene === 2) {
+          noStroke();
+        background(0, 0, 0);
+        fill(color2[0], color2[1], color2[2]);
+        ellipse(characterX, characterY - 15, 20, 20);
+        fill(color1[0], color1[1], color1[2]);
+        ellipse(characterX, characterY, 50, 20);
+        //create obstical movement
+        Opos-=10;
+        //create pillars
+        drawPillar(300, 400);
+        drawPillar(250, 700); 
+        drawPillar(300, 1000);
+        drawPillar(150, 1500);
+        drawPillar(200, 1900);
+        drawPillar(225, 2300);
+        drawPillar(250, 2650);
+        if(Opos < -2750) {
+        drawEndL1();
+        }
+          }
+          //level 2
+          if(currentScene === 5) {
+          background(79, 0, 0);
+          fill(255, 0, 0);
+rect(0, 375, 400, 25);
+noStroke();
+ellipse(lava, 375, 40, 20);
+ellipse(lava + counterlava, 375, 40, 20);
+counterlava = 60;
+ellipse(lava + counterlava, 380, 40, 20);
+counterlava = 85;
+ellipse(lava + counterlava, 375, 40, 20);
+counterlava = 100;
+ellipse(lava + counterlava, 379, 40, 20);
+counterlava = 130;
+ellipse(lava + counterlava, 375, 40, 20);
+counterlava = 165;
+ellipse(lava + counterlava, 375, 40, 20);
+counterlava = 196;
+ellipse(lava + counterlava, 382, 40, 20);
+counterlava = 218;
+ellipse(lava + counterlava, 377, 40, 20);
+counterlava = 245;
+ellipse(lava + counterlava, 375, 40, 20);
+counterlava = 278;
+ellipse(lava + counterlava, 379, 40, 20);
+counterlava = 299;
+ellipse(lava + counterlava, 375, 40, 20);
+counterlava = 318;
+ellipse(lava + counterlava, 375, 40, 20);
+counterlava = 345;
+ellipse(lava + counterlava, 379, 40, 20);
+counterlava = 381;
+ellipse(lava + counterlava, 375, 40, 20);
+            startLevel();
+            drawPillar(230, 400);
+            drawPillar(140, 700);
+            drawPillar(120, 1000);
+            drawPillar(80, 1300);
+            drawPillar(400, 2500);
+            drawPillar(350, 3000);
+            if(Opos < -3100) {
+            drawEndL2();
+            }
+          }
+          if(mode === "lines" && lines === 1) {
+          characterY = 300;
+          }
+          if(mode === "lines" && lines === 2) {
+          characterY = 200;
+          }
+          if(mode === "lines" && lines === 3) {
+          characterY = 100;
+          }
+          //level 3 its time for something new...
+          if(currentScene === 7) {
+          noStroke();
+          background(0, 0, 255);
+          startLevel();
+          drawPillar(380, 400);
+          drawPillar(320, 700);
+          drawPillar(300, 1100);
+          drawPillar(280, 1800);
+          if(Opos < -1900) {mode = "lines"; v = 1;}
+          //OH MY GOD
+          stroke(0, 0, 0);
+          line(Opos + 1900, 300, Opos + 5000, 300);
+          line(Opos + 1900, 200, Opos + 5000, 200);
+          line(Opos + 1900, 100, Opos + 5000, 100);
+          drawPillar(200, 2300);
+          drawPillar(100, 2600);
+          drawPillar(300, 2900);
+          drawPillar(100, 3200);
+          }
+        };
+        //end programs base code
+    }};
+
+    // Get the canvas that Processing-js will use
+    var canvas = document.getElementById("mycanvas"); 
+    // Pass the function sketchProc (defined in myCode.js) to Processing's constructor.
+    var processingInstance = new Processing(canvas, sketchProc); 
+ </script>
+
+</html>
